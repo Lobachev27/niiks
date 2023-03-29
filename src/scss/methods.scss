@@ -1,0 +1,720 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.methods {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding-top: 64px;
+  overflow: hidden;
+  @media screen and ($tablet1) {
+    padding-top: 90px;
+  }
+
+  &__title {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 64px;
+    font-weight: 600;
+    color: #A0A0A0;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    pointer-events: none;
+    text-align: center;
+    /*opacity: 0;*/
+    transition: opacity 0.3s;
+    line-height: 0.8em;
+    @media screen and ($mobile3) {
+      font-size: 80px;
+      top: -10px;
+      line-height: 0.9em;
+    }
+    @media screen and ($tablet1) {
+      font-size: 110px;
+      top: 18px;
+      line-height: 0.9em;
+    }
+    @media screen and ($desktop1) {
+      font-size: 115px;
+      top: 70px;
+      line-height: 0.9em;
+    }
+    @media screen and ($desktop2) {
+      font-size: 130px;
+      top: 60px;
+    }
+    @media screen and ($desktop3) {
+      font-size: 150px;
+      top: 45px;
+    }
+    @media screen and ($desktop4) {
+      font-size: 164px;
+      transform: translateY(-100%);
+      top: calc(50vh - 310px);
+    }
+  }
+
+  &.methods-parallax {
+    & .methods__title {
+      opacity: 1;
+    }
+
+    & .swiper-slide {
+      position: absolute;
+      transition: transform 1s;
+      cursor: pointer;
+      pointer-events: auto;
+
+      &.card-1 {
+        transform:translate(-30px, 0px) rotate(-15deg);
+        z-index: 1;
+        @media screen and ($mobile3) {
+          transform:translate(-50px, 0px) rotate(-15deg);
+        }
+        @media screen and ($tablet1) {
+          transform:translate(-110px, 25px) rotate(-15deg);
+        }
+        @media screen and ($desktop1) {
+          transform:translate(25px, 10px) rotate(-15deg);
+        }
+        @media screen and ($desktop3) {
+          transform:translate(-20px, 35px) rotate(-15deg);
+        }
+
+        & svg {
+          & .svg-bg {
+            fill: #d9d9d9;
+          }
+
+          & .svg-1 {
+            fill: #ABABAB;
+            transition: fill 0.5s;
+          }
+
+          & .svg-2 {
+            fill: #CBCBCB;
+            transition: fill 0.5s;
+          }
+
+          & .svg-3 {
+            fill: #ABABAB;
+            transition: fill 0.5s;
+          }
+        }
+
+        &:hover {
+          & svg {
+            & .svg-1 {
+              fill: #CD3232;
+            }
+
+            & .svg-2 {
+              fill: #D5A9A9;
+              transition-delay: 0.5s;
+            }
+
+            & .svg-3 {
+              fill: #CD3232;
+              transition-delay: 1s;
+            }
+          }
+        }
+      }
+
+      &.card-2 {
+        transform:translate(55px, 90px) rotate(5deg);
+        z-index: 2;
+        @media screen and ($mobile3) {
+          transform:translate(75px, 90px) rotate(5deg);
+        }
+        @media screen and ($tablet1) {
+          transform:translate(130px, 90px) rotate(10deg);
+        }
+        @media screen and ($desktop1) {
+          transform:translate(250px, 40px) rotate(5deg);
+        }
+        @media screen and ($desktop3) {
+          transform:translate(340px, 75px) rotate(5deg);
+        }
+
+        & svg {
+          & .svg-bg {
+            fill: #e8e8e8;
+          }
+
+          & .svg-1 {
+            fill: #ABABAB;
+            transition: fill 0.5s;
+          }
+
+          & .svg-2 {
+            fill: #ABABAB;
+            transition: fill 0.5s;
+          }
+
+          & .svg-3 {
+            fill: #CBCBCB;
+            transition: fill 0.5s;
+          }
+        }
+
+        &:hover {
+          & svg {
+            & .svg-1 {
+              fill: #CD3232;
+            }
+
+            & .svg-2 {
+              fill: #CD3232;
+              transition-delay: 0.5s;
+            }
+
+            & .svg-3 {
+              fill: #D5A9A9;
+              transition-delay: 1s;
+            }
+          }
+        }
+      }
+
+      &.card-3 {
+        transform:translate(-55px, 170px) rotate(-5deg);
+        z-index: 3;
+        @media screen and ($mobile3) {
+          transform:translate(-75px, 170px) rotate(-5deg);
+        }
+        @media screen and ($tablet1) {
+          transform:translate(-35px, 280px) rotate(-5deg);
+        }
+        @media screen and ($desktop1) {
+          transform:translate(520px, 0px) rotate(10deg);
+        }
+        @media screen and ($desktop3) {
+          transform:translate(740px, 15px) rotate(10deg);
+        }
+
+        & svg {
+          & .svg-bg {
+            fill: #F4F4F4;
+          }
+
+          & .svg-1 {
+            fill: #ABABAB;
+            transition: fill 0.5s;
+          }
+
+          & .svg-2 {
+            stroke: #C8C8C8;
+            transition: stroke 0.5s;
+          }
+
+          & .svg-3 {
+            fill: #ABABAB;
+            transition: fill 0.5s;
+          }
+
+          & .svg-4 {
+            fill: #C8C8C8;
+            transition: fill 0.5s;
+          }
+        }
+
+        &:hover {
+          & svg {
+            & .svg-1 {
+              fill: #CD3232;
+            }
+
+            & .svg-2 {
+              stroke: #D5A9A9;
+
+              &.svg-21 {
+                transition-delay: 0.5s;
+              }
+
+              &.svg-22 {
+                transition-delay: 0.7s;
+              }
+
+              &.svg-23 {
+                transition-delay: 0.9s;
+              }
+            }
+
+            & .svg-3 {
+              fill: #CD3232;
+              transition-delay: 0.7s;
+            }
+
+            & .svg-4 {
+              fill: #D5A9A9;
+              transition: fill 0.5s;
+
+              &.svg-41 {
+                transition-delay: 1s;
+              }
+
+              &.svg-42 {
+                transition-delay: 1.2s;
+              }
+
+              &.svg-43 {
+                transition-delay: 1.4s;
+              }
+
+              &.svg-44 {
+                transition-delay: 1.6s;
+              }
+
+              &.svg-45 {
+                transition-delay: 1.8s;
+              }
+
+              &.svg-46 {
+                transition-delay: 2.0s;
+              }
+
+              &.svg-47 {
+                transition-delay: 2.2s;
+              }
+
+              &.svg-48 {
+                transition-delay: 2.4s;
+              }
+
+              &.svg-49 {
+                transition-delay: 2.6s;
+              }
+
+              &.svg-410 {
+                transition-delay: 2.8s;
+              }
+
+              &.svg-411 {
+                transition-delay: 3.0s;
+              }
+            }
+          }
+        }
+      }
+
+      &.card-1,
+      &.card-2,
+      &.card-3 {
+        &.card-first {
+          order: -1;
+          z-index: 10;
+
+          & svg {
+            & .svg-bg {
+              fill: #F4F4F4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.methods-animate {
+    & .methods__title {
+      opacity: 1;
+    }
+
+    & .swiper-slide {
+      position: absolute;
+      transition: transform 1s;
+      cursor: pointer;
+
+      &.card-1 {
+        transform:translate(0, 0) rotate(0);
+        z-index: 1;
+      }
+
+      &.card-2 {
+        transform:translate(0, 0) rotate(0);
+        z-index: 2;
+      }
+
+      &.card-3 {
+        transform:translate(0, 0) rotate(0);
+        z-index: 3;
+      }
+
+      &.card-1,
+      &.card-2,
+      &.card-3 {
+        &.card-first {
+          transform:translate(0, 0) rotate(0);
+          order: -1;
+          z-index: 10;
+
+          & svg {
+            & .svg-bg {
+              fill: #F4F4F4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .methods__slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0 0;
+    z-index: 3;
+    margin: 0 auto;
+    @media screen and ($mobile3) {
+      padding: 150px 0 0;
+    }
+    @media screen and ($tablet1) {
+      padding: 230px 0 0;
+    }
+    @media screen and ($desktop1) {
+      padding: 174px 0 0;
+    }
+    @media screen and ($desktop3) {
+      padding: 160px 0 0;
+    }
+    @media screen and ($desktop4) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 160px 0 138px;
+    }
+
+    & .container {
+      @media screen and ($desktop1) {
+        display: grid;
+        grid-template-columns: 280px auto;
+        grid-column-gap: 120px;
+        justify-content: center;
+        align-items: center;
+      }
+      @media screen and ($desktop3) {
+        grid-template-columns: 400px auto;
+        grid-column-gap: 180px;
+      }
+    }
+
+    &-info {
+      width: 100%;
+      margin-top: 15px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      @media screen and ($tablet1) {
+        max-width: 530px;
+        margin: 48px auto 0;
+      }
+      @media screen and ($desktop1) {
+        margin: 0;
+        max-width: 450px;
+      }
+      @media screen and ($desktop3) {
+        max-width: 540px;
+      }
+
+      &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-caption {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5em;
+      @media screen and ($tablet1) {
+        font-size: 18px;
+      }
+      @media screen and ($desktop1) {
+        font-size: 20px;
+      }
+      @media screen and ($desktop3) {
+        font-size: 24px;
+      }
+    }
+
+    &-description {
+      color: $gray-4;
+      line-height: 1.5em;
+      margin-top: 8px;
+      @media screen and ($tablet1) {
+        font-size: 16px;
+      }
+      @media screen and ($desktop3) {
+        font-size: 20px;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  & .swiper-container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 0 auto;
+    @media screen and ($tablet1) {
+      width: 243px;
+      height: 365px;
+    }
+    @media screen and ($desktop1) {
+      width: 280px;
+      height: 420px;
+    }
+    @media screen and ($desktop3) {
+      width: 400px;
+      height: 600px;
+    }
+  }
+
+  & .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    pointer-events: none;
+
+    &.card-first {
+      order: -1;
+      z-index: initial;
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+
+      & .svg-bg {
+        fill: #d9d9d9;
+        transition: fill 0.3s;
+      }
+    }
+
+    &.card-1,
+    &.card-2,
+    &.card-3 {
+      &.card-first {
+        order: -1;
+        z-index: initial;
+      }
+    }
+
+    &.card-1 {
+      & svg {
+        & .svg-bg {
+          fill: #d9d9d9;
+        }
+
+        & .svg-1 {
+          fill: #ABABAB;
+          transition: fill 0.5s;
+        }
+
+        & .svg-2 {
+          fill: #CBCBCB;
+          transition: fill 0.5s;
+        }
+
+        & .svg-3 {
+          fill: #ABABAB;
+          transition: fill 0.5s;
+        }
+      }
+
+      &.swiper-slide-visible {
+        & svg {
+          & .svg-bg {
+            fill: #F4F4F4;
+          }
+
+          & .svg-1 {
+            fill: #CD3232;
+          }
+
+          & .svg-2 {
+            fill: #D5A9A9;
+            transition-delay: 0.5s;
+          }
+
+          & .svg-3 {
+            fill: #CD3232;
+            transition-delay: 1s;
+          }
+        }
+      }
+    }
+
+    &.card-2 {
+      & svg {
+        & .svg-bg {
+          fill: #d9d9d9;
+        }
+
+        & .svg-1 {
+          fill: #ABABAB;
+          transition: fill 0.5s;
+        }
+
+        & .svg-2 {
+          fill: #ABABAB;
+          transition: fill 0.5s;
+        }
+
+        & .svg-3 {
+          fill: #CBCBCB;
+          transition: fill 0.5s;
+        }
+      }
+
+      &.swiper-slide-visible {
+        & svg {
+          & .svg-bg {
+            fill: #F4F4F4;
+          }
+
+          & .svg-1 {
+            fill: #CD3232;
+          }
+
+          & .svg-2 {
+            fill: #CD3232;
+            transition-delay: 0.5s;
+          }
+
+          & .svg-3 {
+            fill: #D5A9A9;
+            transition-delay: 1s;
+          }
+        }
+      }
+    }
+
+    &.card-3 {
+      & svg {
+        & .svg-bg {
+          fill: #d9d9d9;
+        }
+
+        & .svg-1 {
+          fill: #ABABAB;
+          transition: fill 0.5s;
+        }
+
+        & .svg-2 {
+          stroke: #C8C8C8;
+          transition: stroke 0.5s;
+        }
+
+        & .svg-3 {
+          fill: #ABABAB;
+          transition: fill 0.5s;
+        }
+
+        & .svg-4 {
+          fill: #C8C8C8;
+          transition: fill 0.5s;
+        }
+      }
+
+      &.swiper-slide-visible {
+        & svg {
+          & .svg-bg {
+            fill: #F4F4F4;
+          }
+
+          & .svg-1 {
+            fill: #CD3232;
+          }
+
+          & .svg-2 {
+            stroke: #D5A9A9;
+
+            &.svg-21 {
+              transition-delay: 0.5s;
+            }
+
+            &.svg-22 {
+              transition-delay: 0.7s;
+            }
+
+            &.svg-23 {
+              transition-delay: 0.9s;
+            }
+          }
+
+          & .svg-3 {
+            fill: #CD3232;
+            transition-delay: 1s;
+          }
+
+          & .svg-4 {
+            fill: #D5A9A9;
+            transition: fill 0.5s;
+
+            &.svg-41 {
+              transition-delay: 1s;
+            }
+
+            &.svg-42 {
+              transition-delay: 1.2s;
+            }
+
+            &.svg-43 {
+              transition-delay: 1.4s;
+            }
+
+            &.svg-44 {
+              transition-delay: 1.6s;
+            }
+
+            &.svg-45 {
+              transition-delay: 1.8s;
+            }
+
+            &.svg-46 {
+              transition-delay: 2s;
+            }
+
+            &.svg-47 {
+              transition-delay: 2.2s;
+            }
+
+            &.svg-48 {
+              transition-delay: 2.4s;
+            }
+
+            &.svg-49 {
+              transition-delay: 2.6s;
+            }
+
+            &.svg-410 {
+              transition-delay: 2.8s;
+            }
+
+            &.svg-411 {
+              transition-delay: 3s;
+            }
+          }
+        }
+      }
+    }
+
+    &.swiper-slide-visible {
+      pointer-events: none;
+
+      & svg {
+        & .svg-bg {
+          fill: #F4F4F4;
+        }
+      }
+    }
+  }
+}

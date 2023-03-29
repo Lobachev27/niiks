@@ -1,0 +1,191 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  transition: background-color 0.3s, opacity 0.3s;
+  z-index: 101;
+
+  &.fixed {
+    background-color: $black;
+    box-shadow: 0 4px 22px rgba(255,255,255, 0.07);
+    transition: background-color 0.3s;
+    @media screen and ($desktop1) {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &.header-none {
+    opacity: 0;
+  }
+
+  & .container {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    @media screen and ($tablet1) {
+      height: 90px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    line-height: 0;
+    margin-left: -5px;
+
+    &-img {
+      height: 24px;
+      @media screen and ($tablet1) {
+        height: 36px;
+      }
+    }
+  }
+
+  &__list {
+    display: none;
+    @media screen and ($tablet1) {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-left: auto;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:first-child {
+      & .header__link {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1.2em;
+    min-width: 81px;
+    margin-left: 50px;
+    transition: opacity 0.3s, font-weight 0.1s, margin 0.3s;
+    @media screen and ($desktop1) {
+      min-width: 91px;
+      font-size: 18px;
+      margin-left: 60px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__menu {
+    position: relative;
+    min-width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-left: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    @media screen and ($tablet1) {
+      display: none;
+    }
+
+    & svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 18px;
+      width: 18px;
+      height: 18px;
+      transition: opacity 0.3s;
+    }
+
+    & .svg-1 {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    & .svg-2 {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.active {
+      & .svg-1 {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      & .svg-2 {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.header-mobile {
+  position: fixed;
+  right: -200px;
+  top: 48px;
+  width: 200px;
+  height: calc(100vh - 48px);
+  background-color: rgba(18, 18, 18, 0.9);
+  box-shadow: -22px 0px 22px -22px rgba(255,255,255, 0);
+  display: flex;
+  flex-direction: column;
+  z-index: 102;
+  /*opacity: 0;
+  visibility: hidden;
+  pointer-events: none;*/
+  transition: transform 0.5s, box-shadow 0.5s;
+  @media screen and ($tablet1) {
+    display: none;
+  }
+
+  &.active {
+    /*opacity: 1;
+    visibility: visible;
+    pointer-events: auto;*/
+    box-shadow: -22px 0px 22px -22px rgba(255,255,255, 0.1);
+    transform: translateX(-100%);
+  }
+
+  &__nav {
+    position: relative;
+    padding: 48px 15px;
+    list-style: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    & .header {
+      &__item {
+        margin-bottom: 48px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &__link {
+        font-size: 18px;
+        /*font-weight: 300;*/
+        min-width: initial;
+        margin: 0 !important;
+      }
+    }
+  }
+}

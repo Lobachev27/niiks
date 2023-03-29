@@ -1,0 +1,41 @@
+<section id="news" class="news">
+  <div class="container">
+    <div class="news__title">Новости</div>
+  </div>
+
+  <div class="swiper-container">
+
+    <div class="swiper-wrapper">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <div class="swiper-slide">
+        <div class="news__box">
+          <div class="news__box-img `+context.arr[i].imageClass+`">
+            <img src="`+context.arr[i].image+`" alt="">
+          </div>
+          <div class="news__box-info">
+            <div class="news__box-caption">`+context.arr[i].caption+`</div>
+            <div class="news__box-description">`+context.arr[i].description+`</div>
+          </div>
+          <a class="news__box-link js-popup" href="#popupNews"></a>
+        </div>
+      </div>
+      }
+    </div>
+
+  </div>
+
+  <div class="swiper-pagination"></div>
+
+  <div class="news__navigation">
+    <div class="swiper-button-prev">
+      <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2L2 14L14 26" stroke-width="3" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="swiper-button-next">
+      <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2L14 14L2 26" stroke-width="3" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,477 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+
+  & .bg-mob-tr {
+    position: absolute;
+    right: 0;
+    top: 0;
+    @media screen and ($desktop1) {
+      display: none;
+    }
+
+    & svg {
+      width: 78.89vw;
+      height: 60.94vh;
+    }
+  }
+
+  & .bg-mob-center {
+    position: absolute;
+    left: 65.72%;
+    top: 57.42%;
+    transform: translate(-50%, -50%);
+    @media screen and ($desktop1) {
+      display: none;
+    }
+
+    & svg {
+      width: 52.50vw;
+      height: 28.90vh;
+    }
+  }
+
+  & .bg-mob-lb {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @media screen and ($desktop1) {
+      display: none;
+    }
+
+    & svg {
+      width: 59.72vw;
+      height: 45.94vh;
+    }
+  }
+
+  & .bg-star-group {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 83.83%;
+      top: 61.55%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 23.13vw;
+      height: 53.90vh;
+    }
+  }
+
+  & .bg-star-b-1 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 20.00%;
+      top: 96.10%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  & .bg-star-b-2 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 27.03%;
+      top: 40.80%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  & .bg-star-b-3 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 51.61%;
+      top: 82.50%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  & .bg-star-b-4 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 64.58%;
+      top: 3.70%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  & .bg-star-b-5 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 70.31%;
+      top: 54.40%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  & .bg-star-s-1 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 7.92%;
+      top: 69.60%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  & .bg-star-s-2 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 32.50%;
+      top: 66.10%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  & .bg-star-s-3 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 35.52%;
+      top: 84.90%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  & .bg-star-s-4 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 40.31%;
+      top: 24.10%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  & .bg-star-s-5 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 49.32%;
+      top: 50.90%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  & .bg-star-s-6 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 80.47%;
+      top: 16.70%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  & .bg-star-s-7 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 98.70%;
+      top: 26.80%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  & .bg-circle-1 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 8.07%;
+      top: 63.20%;
+      transform: translate(-50%, -50%);
+      width: 52.60vw;
+      height: 52.60vw;
+      -moz-animation: 260s linear 0s normal none infinite running circle-rotate;
+      -webkit-animation: 260s linear 0s normal none infinite running circle-rotate;
+      animation: 260s linear 0s normal none infinite running circle-rotate;
+    }
+
+    & svg {
+      &.circle {
+        width: 100%;
+        height: 100%;
+      }
+
+      &.text {
+        position: absolute;
+        left: 108.60%;
+        top: 39.15%;
+        transform: translate(-50%, -50%);
+        width: 15.94%;
+        height: 3.86%;
+      }
+    }
+  }
+
+  & .bg-circle-2 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 83.59%;
+      top: 28.30%;
+      transform: translate(-50%, -50%);
+      width: 52.60vw;
+      height: 52.60vw;
+      -moz-animation: 260s linear 0s normal none infinite running circle-rotate;
+      -webkit-animation: 260s linear 0s normal none infinite running circle-rotate;
+      animation: 260s linear 0s normal none infinite running circle-rotate;
+    }
+
+    & svg {
+      &.circle {
+        width: 100%;
+        height: 100%;
+      }
+
+      &.text {
+        position: absolute;
+        left: 14.10%;
+        top: 31.25%;
+        transform: translate(-50%, -50%);
+        width: 13.96%;
+        height: 7.82%;
+      }
+    }
+  }
+}
+
+@-moz-keyframes circle-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes circle-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes circle-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.bg-icon {
+  display: none;
+  @media screen and ($desktop1) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    transition: transform 1s, opacity 1s;
+  }
+
+  & .bg-icon-1 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 12.23%;
+      top: 63.00%;
+      transform: translate(-50%, -50%);
+      width: 30.52vw;
+      height: 50.20vw;
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+
+      & path {
+        animation: draw 4s linear forwards;
+        animation-delay: 3s;
+      }
+    }
+  }
+
+  & .bg-icon-2 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 46.46%;
+      top: 52.95%;
+      transform: translate(-50%, -50%);
+      width: 20.52vw;
+      height: 38.50vw;
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+
+      & path {
+        animation: draw 3s linear forwards;
+        animation-delay: 1s;
+      }
+    }
+  }
+
+  & .bg-icon-3 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 71.95%;
+      top: 85.65%;
+      transform: translate(-50%, -50%);
+      width: 25.99vw;
+      height: 42.50vw;
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+
+      & path {
+        animation: draw 4s linear forwards;
+        animation-delay: 2s;
+      }
+    }
+  }
+
+  & .bg-icon-4 {
+    display: none;
+    @media screen and ($desktop1) {
+      display: block;
+      position: absolute;
+      left: 86.55%;
+      top: 32.05%;
+      transform: translate(-50%, -50%);
+      width: 34.43vw;
+      height: 38.10vw;
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+
+      & path {
+        animation: draw 3s linear forwards;
+        animation-delay: 4s;
+      }
+    }
+  }
+}
+
+@-moz-keyframes draw {
+  100% {
+    stroke-dashoffset:0;
+  }
+}
+
+@-webkit-keyframes draw {
+  100% {
+    stroke-dashoffset:0;
+  }
+}
+
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

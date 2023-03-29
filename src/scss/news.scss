@@ -1,0 +1,378 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.news {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding-top: 64px;
+  @media screen and ($tablet1) {
+    padding-top: 90px;
+  }
+
+  &__title {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 64px;
+    font-weight: 600;
+    color: #A0A0A0;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    pointer-events: none;
+    @media screen and ($mobile3) {
+      font-size: 80px;
+      top: -10px;
+    }
+    @media screen and ($tablet1) {
+      font-size: 110px;
+      top: 18px;
+    }
+    @media screen and ($desktop1) {
+      font-size: 115px;
+      top: 70px;
+      line-height: 0.9em;
+    }
+    @media screen and ($desktop2) {
+      font-size: 130px;
+      top: 60px;
+    }
+    @media screen and ($desktop3) {
+      font-size: 150px;
+      top: 45px;
+    }
+    @media screen and ($desktop4) {
+      font-size: 164px;
+      transform: translateY(-100%);
+      top: calc(50vh - 310px);
+    }
+
+    /*&:before {
+      @media screen and ($desktop4) {
+        content: '';
+        position: absolute;
+        bottom: 38px;
+        left: 12px;
+        width: 400px;
+        height: 12px;
+        background-color: $black;
+      }
+    }*/
+  }
+
+  & .swiper-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 60px 15px 72px;
+    margin: 0 auto;
+    z-index: 3;
+    overflow: hidden;
+    @media screen and ($mobile3) {
+      padding: 80px 15px 72px;
+    }
+    @media screen and ($tablet1) {
+      padding: 140px 15px 92px;
+    }
+    @media screen and ($desktop1) {
+      padding: 174px 20px 124px;
+    }
+    @media screen and ($desktop4) {
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0));
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: left;
+    }
+    @media screen and ($desktop4) {
+      justify-content: center;
+    }
+  }
+
+  & .swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    margin: 0 auto;
+    @media screen and ($desktop4) {
+      max-height: 600px;
+    }
+  }
+
+  & .swiper-slide {
+    position: relative;
+    @media screen and ($desktop3) {
+      width: 560px;
+    }
+    @media screen and ($desktop4) {
+      height: 600px;
+    }
+
+    &:hover {
+      & .news__box {
+        &-img {
+          filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0)) grayscale(0);
+        }
+
+        &-caption {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    bottom: 36px;
+    left: 0;
+    transform: translateY(50%);
+    width: 100%;
+    height: 24px;
+    pointer-events: none;
+    z-index: 3;
+    @media screen and ($tablet1) {
+      bottom: 46px;
+      width: 400px;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  & .swiper-button-next,
+  & .swiper-button-prev {
+    position: absolute;
+    outline: none;
+    width: 12px;
+    height: 24px;
+    display: block;
+    bottom: 50%;
+    transform: translateY(42%);
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s;
+
+    &.swiper-button-disabled {
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:after {
+      content: '';
+    }
+
+    & svg {
+      position: absolute;
+      width: 12px;
+      height: 24px;
+      stroke: #E0E0E0;
+      transition:  stroke 0.3s;
+    }
+
+    &:hover{
+      & svg {
+        stroke: $white;
+        transition: stroke 0.3s;
+      }
+    }
+  }
+
+  & .swiper-button-prev {
+    left: 15px;
+    @media screen and ($tablet1) {
+      left: 0;
+    }
+  }
+
+  & .swiper-button-next {
+    right: 15px;
+    @media screen and ($tablet1) {
+      right: 0;
+    }
+  }
+
+  & .swiper-pagination.swiper-pagination-bullets-dynamic {
+    position: absolute;
+    white-space: nowrap;
+    padding: 2px 0;
+    bottom: 36px;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, 50%);
+    @media screen and ($tablet1) {
+      bottom: 46px;
+    }
+
+    & .swiper-pagination-bullet {
+      position: relative;
+      width: 32px;
+      height: 4px;
+      border-radius: 10px;
+      background-color: rgba(255,255,255,0.3);
+      margin: 0 5px;
+      transform: scale(1);
+      opacity: 1;
+      z-index: 2;
+      overflow: hidden;
+      transition: background-color 0.3s, transform 0.3s, left 0.3s;
+      @media screen and ($tablet1) {
+        width: 46px;
+      }
+
+      &:hover {
+        background-color: rgba(255,255,255,0.5);
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        border-radius: 10px;
+        transform: translateX(0%);
+        transition: transform 7s;
+        opacity: 0;
+      }
+
+      &.swiper-pagination-bullet-active {
+        background-color: rgba(255,255,255,0.3);
+        opacity: 1;
+
+        &:before {
+          content: '';
+          transform: translateX(100%);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__box{
+    position: relative;
+
+    &-img {
+      position: relative;
+      width: 100%;
+      padding-top: 62%;
+      filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.25)) grayscale(1);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 1;
+      transition: filter 0.5s;
+      @media screen and ($tablet1) {
+        padding-top: 50%;
+      }
+
+      &.img-none {
+        & img {
+          display: none;
+        }
+      }
+
+      & img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("../img/news-default.jpg") no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    &-info {
+      margin-top: 12px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 14;
+      overflow: hidden;
+      z-index: 1;
+      @media screen and ($mobile3) {
+        -webkit-line-clamp: 12;
+      }
+      @media screen and ($tablet1) {
+        margin-top: 18px;
+        -webkit-line-clamp: 11;
+      }
+      @media screen and ($desktop1) {
+        margin-top: 24px;
+        -webkit-line-clamp: 9;
+      }
+    }
+
+    &-caption {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4em;
+      transition: color 0.3s;
+      @media screen and ($tablet1) {
+        font-size: 18px;
+      }
+      @media screen and ($tablet2) {
+        font-size: 20px;
+      }
+      @media screen and ($desktop1) {
+        font-size: 22px;
+      }
+      @media screen and ($desktop3) {
+        font-size: 24px;
+      }
+    }
+
+    &-description {
+      font-size: 14px;
+      color: $gray-4;
+      line-height: 1.4em;
+      margin-top: 8px;
+      @media screen and ($tablet1) {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      @media screen and ($desktop1) {
+        font-size: 18px;
+        margin-top: 12px;
+      }
+      @media screen and ($desktop3) {
+        font-size: 20px;
+      }
+
+      & p {
+        font-size: inherit;
+        color: inherit;
+        line-height: inherit;
+        margin-top: inherit;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+    }
+  }
+}

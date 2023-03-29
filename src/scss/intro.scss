@@ -1,0 +1,110 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.intro {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 64px;
+  @media screen and ($tablet1) {
+    padding-top: 90px;
+  }
+
+  & .container {
+    height: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 52px;
+    @media screen and ($mobile3) {
+      padding-top: 80px;
+    }
+    @media screen and ($tablet1) {
+      padding-top: 100px;
+    }
+    @media screen and ($desktop1) {
+      padding-top: 10vh;
+    }
+    @media screen and (min-width: 2560px) {
+      padding-top: 20vh;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1.2em;
+    @media screen and ($tablet1) {
+      font-size: 48px;
+    }
+    @media screen and ($desktop1) {
+      font-size: 60px;
+    }
+    @media screen and ($desktop2) {
+      font-size: 70px;
+    }
+
+    & span {
+      font-weight: 700;
+    }
+  }
+
+  &__description {
+    color: $gray-4;
+    line-height: 1.5em;
+    margin-top: 16px;
+    @media screen and ($tablet1) {
+      max-width: 825px;
+      margin-top: 32px;
+      font-size: 16px;
+    }
+    @media screen and ($desktop1) {
+      font-size: 20px;
+    }
+  }
+
+  &__footer {
+    display: none;
+    @media screen and ($desktop1) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__scroll {
+    display: none;
+    @media screen and ($desktop1) {
+      position: relative;
+      display: block;
+      color: $gray-4;
+      line-height: 1.2em;
+      text-transform: uppercase;
+      font-size: 20px;
+      padding-right: 22px;
+      pointer-events: none;
+
+      &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -48px;
+        width: 176px;
+        height: 30px;
+        background: url("../img/scroll.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+}
